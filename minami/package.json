@@ -1,0 +1,61 @@
+{
+  "_args": [
+    [
+      "minami",
+      "/Users/dominik/pr/immutable-lodash"
+    ]
+  ],
+  "_from": "minami",
+  "_id": "minami@1.1.1",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/minami",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": null,
+    "raw": "minami",
+    "rawSpec": "minami",
+    "scope": null,
+    "spec": "/Users/dominik/pr/immutable-lodash/minami",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#DEV:/"
+  ],
+  "_resolved": "file:minami",
+  "_shasum": "3f23c238a617b78d6f3277944d8c2248a08a1716",
+  "_shrinkwrap": null,
+  "_spec": "minami",
+  "_where": "/Users/dominik/pr/immutable-lodash",
+  "author": {
+    "email": "nijikokun@gmail.com",
+    "name": "Nijiko Yonskai"
+  },
+  "bugs": {
+    "url": "https://github.com/Nijikokun/minami/issues"
+  },
+  "dependencies": {},
+  "description": "Clean and minimal JSDoc 3 Template / Theme",
+  "devDependencies": {},
+  "gitHead": "b1d433aaa603764d16c71f34818cd2689fc34035",
+  "homepage": "https://github.com/Nijikokun/minami",
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "main": "publish.js",
+  "name": "minami",
+  "optionalDependencies": {},
+  "readme": "# Minami\n\nA clean, responsive documentation template theme for JSDoc 3.\n\n![Minami Screenshot](http://puu.sh/gOyNe/66c3adcb97.png)\n\n## Uses\n\n- [the Taffy Database library](http://taffydb.com/)\n- [Underscore Template library](http://documentcloud.github.com/underscore/#template)\n- [Montserrat](http://www.google.com/fonts/specimen/Monsterrat) & Helvetica Neue\n\n## Install\n\n```bash\n$ npm install --save-dev minami\n```\n\n## Usage\n\nClone repository to your designated `jsdoc` template directory, then:\n\n```bash\n$ jsdoc entry-file.js -t path/to/minami\n```\n\n### Node.js Dependency\n\nIn your projects `package.json` file add a generate script:\n\n```json\n\"script\": {\n  \"generate-docs\": \"node_modules/.bin/jsdoc --configure .jsdoc.json --verbose\"\n}\n```\n\nIn your `.jsdoc.json` file, add a template option.\n\n```json\n\"opts\": {\n  \"template\": \"node_modules/minami\"\n}\n```\n\n### Example JSDoc Config\n\n```json\n{\n    \"tags\": {\n        \"allowUnknownTags\": true,\n        \"dictionaries\": [\"jsdoc\"]\n    },\n    \"source\": {\n        \"include\": [\"lib\", \"package.json\", \"README.md\"],\n        \"includePattern\": \".js$\",\n        \"excludePattern\": \"(node_modules/|docs)\"\n    },\n    \"plugins\": [\n        \"plugins/markdown\"\n    ],\n    \"templates\": {\n        \"cleverLinks\": false,\n        \"monospaceLinks\": true\n    },\n    \"opts\": {\n        \"destination\": \"./docs/\",\n        \"encoding\": \"utf8\",\n        \"private\": true,\n        \"recurse\": true,\n        \"template\": \"./node_modules/minami\"\n    }\n}\n```\n\n## License\n\nLicensed under the Apache2 license.",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nijikokun/minami.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.1.1"
+}
