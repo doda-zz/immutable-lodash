@@ -86,7 +86,7 @@ h6 {
 
 tt, code, kbd, samp {
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
-  background: #f4f4f4;
+  /*background: #f4f4f4;*/
   padding: 1px 5px;
   border-radius: 5px;
 }
@@ -312,7 +312,7 @@ footer {
   line-height: 18px;
   display: block;
   margin: 0 30px;
-  background-color: #fff;
+  /*background-color: #fff;*/
   color: #4D4E53;
 }
 

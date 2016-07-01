@@ -10,8 +10,9 @@
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
     <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+    <!-- <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css"> -->
+    <link type="text/css" rel="stylesheet" href="styles/tomorrow-night-eighties.css">
 </head>
 <body>
 
@@ -120,7 +121,7 @@
 
     
 
-    <h4 class="name" id=".at"><span class="type-signature">(static) </span>at<span class="signature">(iterable, &hellip;paths<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".at"><span class="type-signature">_.</span>at<span class="signature">(iterable, [&hellip;paths])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -134,6 +135,16 @@
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var iterable = { 'a': [{ 'b': { 'c': 3 } }, 4] }
+
+_.at(iterable, ['a[0].b.c', 'a[1]'])
+// => [3, 4]</code></pre>
 
 
 
@@ -314,22 +325,12 @@
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var iterable = { 'a': [{ 'b': { 'c': 3 } }, 4] }
-
-_.at(iterable, ['a[0].b.c', 'a[1]'])
-// => [3, 4]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".chunk"><span class="type-signature">(static) </span>chunk<span class="signature">(iterable, size<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".chunk"><span class="type-signature">_.</span>chunk<span class="signature">(iterable, [size])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -345,6 +346,18 @@ elements.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>let list = ['a', 'b', 'c', 'd']
+_.chunk(list, 2)
+// => [['a', 'b'], ['c', 'd']]
+
+_.chunk(list, 3)
+// => [['a', 'b', 'c'], ['d']]</code></pre>
 
 
 
@@ -532,24 +545,12 @@ elements.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>let list = ['a', 'b', 'c', 'd']
-_.chunk(list, 2)
-// => [['a', 'b'], ['c', 'd']]
-
-_.chunk(list, 3)
-// => [['a', 'b', 'c'], ['d']]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".compact"><span class="type-signature">(static) </span>compact<span class="signature">(iterable, Returns)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".compact"><span class="type-signature">_.</span>compact<span class="signature">(iterable, Returns)</span><span class="type-signature"></span></h4>
 
     
 
@@ -564,6 +565,14 @@ _.chunk(list, 3)
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.compact([0, 1, false, 2, '', 3])
+// => [1, 2, 3]</code></pre>
 
 
 
@@ -697,20 +706,12 @@ _.chunk(list, 3)
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.compact([0, 1, false, 2, '', 3])
-// => [1, 2, 3]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".concat"><span class="type-signature">(static) </span>concat<span class="signature">(iterable, &hellip;values<span class="signature-attributes">opt</span>, Returns)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".concat"><span class="type-signature">_.</span>concat<span class="signature">(iterable, [&hellip;values], Returns)</span><span class="type-signature"></span></h4>
 
     
 
@@ -725,6 +726,17 @@ with any additional iterables and/or values.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var list = [1]
+var other = _.concat(list, 2, [3], [[4]])
+
+console.log(other)
+// => [1, 2, 3, [4]]</code></pre>
 
 
 
@@ -911,23 +923,12 @@ with any additional iterables and/or values.</p>
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var list = [1]
-var other = _.concat(list, 2, [3], [[4]])
-
-console.log(other)
-// => [1, 2, 3, [4]]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".countBy"><span class="type-signature">(static) </span>countBy<span class="signature">(iteratee<span class="signature-attributes">opt</span>)</span><span class="type-signature"></span></h4>
+    <h4 class="name" id=".countBy"><span class="type-signature">_.</span>countBy<span class="signature">([iteratee])</span><span class="type-signature"></span></h4>
 
     
 
@@ -944,6 +945,14 @@ iteratee is invoked with one argument: (value).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.countBy([6.1, 4.2, 6.3], Math.floor)
+// => { '4': 1, '6': 2 }</code></pre>
 
 
 
@@ -1074,20 +1083,12 @@ iteratee is invoked with one argument: (value).</p>
 
 
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.countBy([6.1, 4.2, 6.3], Math.floor)
-// => { '4': 1, '6': 2 }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".defaults"><span class="type-signature">(static) </span>defaults<span class="signature">(iterable, &hellip;sources<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".defaults"><span class="type-signature">_.</span>defaults<span class="signature">(iterable, [&hellip;sources])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -1103,6 +1104,14 @@ Once a key is set, additional values of the same key are ignored.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 })
+// => { 'a': 1, 'b': 2 }</code></pre>
 
 
 
@@ -1287,20 +1296,12 @@ Once a key is set, additional values of the same key are ignored.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.defaults({ 'a': 1 }, { 'b': 2 }, { 'a': 3 })
-// => { 'a': 1, 'b': 2 }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".defaultsDeep"><span class="type-signature">(static) </span>defaultsDeep<span class="signature">(iterable, &hellip;sources<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".defaultsDeep"><span class="type-signature">_.</span>defaultsDeep<span class="signature">(iterable, [&hellip;sources])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -1315,6 +1316,14 @@ default properties.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.defaultsDeep({ 'a': { 'b': 2 } }, { 'a': { 'b': 1, 'c': 3 } })
+// => { 'a': { 'b': 2, 'c': 3 } }</code></pre>
 
 
 
@@ -1499,20 +1508,12 @@ default properties.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.defaultsDeep({ 'a': { 'b': 2 } }, { 'a': { 'b': 1, 'c': 3 } })
-// => { 'a': { 'b': 2, 'c': 3 } }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".difference"><span class="type-signature">(static) </span>difference<span class="signature">(iterable, &hellip;values<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".difference"><span class="type-signature">_.</span>difference<span class="signature">(iterable, [&hellip;values])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -1528,6 +1529,14 @@ in the first iterable.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.difference([2, 1], [2, 3])
+// => [1]</code></pre>
 
 
 
@@ -1712,20 +1721,12 @@ in the first iterable.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.difference([2, 1], [2, 3])
-// => [1]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".differenceBy"><span class="type-signature">(static) </span>differenceBy<span class="signature">(iterable, &hellip;values<span class="signature-attributes">opt</span>, iteratee<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".differenceBy"><span class="type-signature">_.</span>differenceBy<span class="signature">(iterable, [&hellip;values], [iteratee])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -1742,6 +1743,14 @@ The iteratee is invoked with one argument: (value).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor)
+// => [1.2]</code></pre>
 
 
 
@@ -1968,20 +1977,12 @@ The iteratee is invoked with one argument: (value).</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor)
-// => [1.2]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".fill"><span class="type-signature">(static) </span>fill<span class="signature">(iterable, value, start<span class="signature-attributes">opt</span>, end<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".fill"><span class="type-signature">_.</span>fill<span class="signature">(iterable, value, [start], [end])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -1996,6 +1997,19 @@ including, <code>end</code>.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var list = [1, 2, 3]
+
+_.fill(list, 'a')
+// => ['a', 'a', 'a']
+
+_.fill([4, 6, 8, 10], '*', 1, 3)
+// => [4, '*', '*', 10]</code></pre>
 
 
 
@@ -2257,25 +2271,12 @@ including, <code>end</code>.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var list = [1, 2, 3]
-
-_.fill(list, 'a')
-// => ['a', 'a', 'a']
-
-_.fill([4, 6, 8, 10], '*', 1, 3)
-// => [4, '*', '*', 10]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".groupBy"><span class="type-signature">(static) </span>groupBy<span class="signature">(iterable, iteratee<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Map}</span></h4>
+    <h4 class="name" id=".groupBy"><span class="type-signature">_.</span>groupBy<span class="signature">(iterable, [iteratee])</span><span class="type-signature"> &rarr; {Map}</span></h4>
 
     
 
@@ -2293,6 +2294,14 @@ key. The iteratee is invoked with one argument: (value).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.groupBy([6.1, 4.2, 6.3], Math.floor)
+// => { '4': [4.2], '6': [6.1, 6.3] }</code></pre>
 
 
 
@@ -2480,20 +2489,12 @@ key. The iteratee is invoked with one argument: (value).</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.groupBy([6.1, 4.2, 6.3], Math.floor)
-// => { '4': [4.2], '6': [6.1, 6.3] }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".intersection"><span class="type-signature">(static) </span>intersection<span class="signature">(&hellip;iterables<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".intersection"><span class="type-signature">_.</span>intersection<span class="signature">([&hellip;iterables])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -2508,6 +2509,14 @@ The order of result values is determined by the order they occur in the first it
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.intersection([2, 1], [2, 3])
+// => Seq [2]</code></pre>
 
 
 
@@ -2654,20 +2663,12 @@ The order of result values is determined by the order they occur in the first it
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.intersection([2, 1], [2, 3])
-// => Seq [2]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".invert"><span class="type-signature">(static) </span>invert<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".invert"><span class="type-signature">_.</span>invert<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -2683,6 +2684,16 @@ property assignments of previous values.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': 2, 'c': 1 }
+
+_.invert(iterable)
+// => { '1': 'c', '2': 'b' }</code></pre>
 
 
 
@@ -2815,22 +2826,12 @@ property assignments of previous values.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': 2, 'c': 1 }
-
-_.invert(iterable)
-// => { '1': 'c', '2': 'b' }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".keyBy"><span class="type-signature">(static) </span>keyBy<span class="signature">(iterable, iteratee<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Map}</span></h4>
+    <h4 class="name" id=".keyBy"><span class="type-signature">_.</span>keyBy<span class="signature">(iterable, [iteratee])</span><span class="type-signature"> &rarr; {Map}</span></h4>
 
     
 
@@ -2847,6 +2848,22 @@ iteratee is invoked with one argument: (value).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var keys = [
+  { 'dir': 'left', 'code': 97 },
+  { 'dir': 'right', 'code': 100 }
+]
+
+_.keyBy(keys, (o) => String.fromCharCode(o.code))
+// => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
+
+_.keyBy(keys, 'dir')
+// => { 'left': { 'dir': 'left', 'code': 97 }, 'right': { 'dir': 'right', 'code': 100 } }</code></pre>
 
 
 
@@ -3034,28 +3051,12 @@ iteratee is invoked with one argument: (value).</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var keys = [
-  { 'dir': 'left', 'code': 97 },
-  { 'dir': 'right', 'code': 100 }
-]
-
-_.keyBy(keys, (o) => String.fromCharCode(o.code))
-// => { 'a': { 'dir': 'left', 'code': 97 }, 'd': { 'dir': 'right', 'code': 100 } }
-
-_.keyBy(keys, 'dir')
-// => { 'left': { 'dir': 'left', 'code': 97 }, 'right': { 'dir': 'right', 'code': 100 } }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".omit"><span class="type-signature">(static) </span>omit<span class="signature">(iterable, &hellip;props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".omit"><span class="type-signature">_.</span>omit<span class="signature">(iterable, [&hellip;props])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -3070,6 +3071,16 @@ supplied keys</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var map = { 'a': 1, 'b': '2', 'c': 3 }
+
+_.omit(map, ['a', 'c'])
+// => { 'b': '2' }</code></pre>
 
 
 
@@ -3250,22 +3261,12 @@ supplied keys</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var map = { 'a': 1, 'b': '2', 'c': 3 }
-
-_.omit(map, ['a', 'c'])
-// => { 'b': '2' }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".omitBy"><span class="type-signature">(static) </span>omitBy<span class="signature">(iterable, predicate<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".omitBy"><span class="type-signature">_.</span>omitBy<span class="signature">(iterable, [predicate])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -3281,6 +3282,16 @@ arguments: (value, key).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': '2', 'c': 3 }
+
+_.omitBy(iterable, _.isNumber)
+// => { 'b': '2' }</code></pre>
 
 
 
@@ -3468,22 +3479,12 @@ arguments: (value, key).</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': '2', 'c': 3 }
-
-_.omitBy(iterable, _.isNumber)
-// => { 'b': '2' }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".partition"><span class="type-signature">(static) </span>partition<span class="signature">(iterable, predicate<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {List}</span></h4>
+    <h4 class="name" id=".partition"><span class="type-signature">_.</span>partition<span class="signature">(iterable, [predicate])</span><span class="type-signature"> &rarr; {List}</span></h4>
 
     
 
@@ -3500,6 +3501,20 @@ invoked with one argument: (value).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>let users = [
+  { 'user': 'barney',  'age': 36, 'active': false },
+  { 'user': 'fred',    'age': 40, 'active': true },
+  { 'user': 'pebbles', 'age': 1,  'active': false }
+]
+
+_.partition(users, (o) => o.active)
+// => objects for [['fred'], ['barney', 'pebbles']]</code></pre>
 
 
 
@@ -3687,26 +3702,12 @@ invoked with one argument: (value).</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>let users = [
-  { 'user': 'barney',  'age': 36, 'active': false },
-  { 'user': 'fred',    'age': 40, 'active': true },
-  { 'user': 'pebbles', 'age': 1,  'active': false }
-]
-
-_.partition(users, (o) => o.active)
-// => objects for [['fred'], ['barney', 'pebbles']]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".pick"><span class="type-signature">(static) </span>pick<span class="signature">(iterable, &hellip;props<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".pick"><span class="type-signature">_.</span>pick<span class="signature">(iterable, [&hellip;props])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -3720,6 +3721,16 @@ _.partition(users, (o) => o.active)
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': '2', 'c': 3 }
+
+_.pick(iterable, ['a', 'c'])
+// => { 'a': 1, 'c': 3 }</code></pre>
 
 
 
@@ -3900,22 +3911,12 @@ _.partition(users, (o) => o.active)
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': '2', 'c': 3 }
-
-_.pick(iterable, ['a', 'c'])
-// => { 'a': 1, 'c': 3 }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".pickBy"><span class="type-signature">(static) </span>pickBy<span class="signature">(iterable, predicate<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".pickBy"><span class="type-signature">_.</span>pickBy<span class="signature">(iterable, [predicate])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -3930,6 +3931,16 @@ truthy for. The predicate is invoked with two arguments: (value, key).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': '2', 'c': 3 }
+
+_.pickBy(iterable, _.isNumber)
+// => { 'a': 1, 'c': 3 }</code></pre>
 
 
 
@@ -4117,22 +4128,12 @@ truthy for. The predicate is invoked with two arguments: (value, key).</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var iterable = { 'a': 1, 'b': '2', 'c': 3 }
-
-_.pickBy(iterable, _.isNumber)
-// => { 'a': 1, 'c': 3 }</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".pullAt"><span class="type-signature">(static) </span>pullAt<span class="signature">(iterable, &hellip;indexes<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".pullAt"><span class="type-signature">_.</span>pullAt<span class="signature">(iterable, [&hellip;indexes])</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -4147,6 +4148,15 @@ iterable of removed elements.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>let iterable = ['a', 'b', 'c', 'd']
+_.pullAt(iterable, [1, 3])
+// => ['b', 'd']</code></pre>
 
 
 
@@ -4327,21 +4337,12 @@ iterable of removed elements.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>let iterable = ['a', 'b', 'c', 'd']
-_.pullAt(iterable, [1, 3])
-// => ['b', 'd']</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".sample"><span class="type-signature">(static) </span>sample<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {*}</span></h4>
+    <h4 class="name" id=".sample"><span class="type-signature">_.</span>sample<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {*}</span></h4>
 
     
 
@@ -4355,6 +4356,14 @@ _.pullAt(iterable, [1, 3])
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.sample([1, 2, 3, 4])
+// => 2</code></pre>
 
 
 
@@ -4487,20 +4496,12 @@ _.pullAt(iterable, [1, 3])
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.sample([1, 2, 3, 4])
-// => 2</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".sampleSize"><span class="type-signature">(static) </span>sampleSize<span class="signature">(iterable, n<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {List}</span></h4>
+    <h4 class="name" id=".sampleSize"><span class="type-signature">_.</span>sampleSize<span class="signature">(iterable, [n])</span><span class="type-signature"> &rarr; {List}</span></h4>
 
     
 
@@ -4515,6 +4516,17 @@ size of <code>iterable</code>.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.sampleSize([1, 2, 3], 2)
+// => List [3, 1]
+
+_.sampleSize([1, 2, 3], 4)
+// => List [2, 3, 1]</code></pre>
 
 
 
@@ -4702,23 +4714,12 @@ size of <code>iterable</code>.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.sampleSize([1, 2, 3], 2)
-// => List [3, 1]
-
-_.sampleSize([1, 2, 3], 4)
-// => List [2, 3, 1]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".shuffle"><span class="type-signature">(static) </span>shuffle<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
+    <h4 class="name" id=".shuffle"><span class="type-signature">_.</span>shuffle<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {Iterable}</span></h4>
 
     
 
@@ -4733,6 +4734,14 @@ _.sampleSize([1, 2, 3], 4)
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.shuffle([1, 2, 3, 4])
+// => [4, 1, 3, 2]</code></pre>
 
 
 
@@ -4865,20 +4874,12 @@ _.sampleSize([1, 2, 3], 4)
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.shuffle([1, 2, 3, 4])
-// => [4, 1, 3, 2]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".sortedIndex"><span class="type-signature">(static) </span>sortedIndex<span class="signature">(iterable, value)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id=".sortedIndex"><span class="type-signature">_.</span>sortedIndex<span class="signature">(iterable, value)</span><span class="type-signature"> &rarr; {number}</span></h4>
 
     
 
@@ -4893,6 +4894,14 @@ should be inserted into <code>iterable</code> in order to maintain its sort orde
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.sortedIndex([30, 50], 40)
+// => 1</code></pre>
 
 
 
@@ -5049,20 +5058,12 @@ should be inserted into <code>iterable</code> in order to maintain its sort orde
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.sortedIndex([30, 50], 40)
-// => 1</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".sortedIndexBy"><span class="type-signature">(static) </span>sortedIndexBy<span class="signature">(iterable, value, iteratee<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+    <h4 class="name" id=".sortedIndexBy"><span class="type-signature">_.</span>sortedIndexBy<span class="signature">(iterable, value, [iteratee])</span><span class="type-signature"> &rarr; {number}</span></h4>
 
     
 
@@ -5078,6 +5079,20 @@ sort ranking. The iteratee is invoked with one argument: (value).</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>var maps = [{ 'x': 4 }, { 'x': 5 }]
+
+_.sortedIndexBy(maps, { 'x': 4 }, (o) => o.x)
+// => 0
+
+// The `_.property` iteratee shorthand.
+_.sortedIndexBy(maps, { 'x': 4 }, 'x')
+// => 0</code></pre>
 
 
 
@@ -5301,26 +5316,12 @@ sort ranking. The iteratee is invoked with one argument: (value).</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>var maps = [{ 'x': 4 }, { 'x': 5 }]
-
-_.sortedIndexBy(maps, { 'x': 4 }, (o) => o.x)
-// => 0
-
-// The `_.property` iteratee shorthand.
-_.sortedIndexBy(maps, { 'x': 4 }, 'x')
-// => 0</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".union"><span class="type-signature">(static) </span>union<span class="signature">(&hellip;iterables<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Seq}</span></h4>
+    <h4 class="name" id=".union"><span class="type-signature">_.</span>union<span class="signature">([&hellip;iterables])</span><span class="type-signature"> &rarr; {Seq}</span></h4>
 
     
 
@@ -5334,6 +5335,14 @@ _.sortedIndexBy(maps, { 'x': 4 }, 'x')
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.union([2], [1, 2])
+// => Seq [2, 1]</code></pre>
 
 
 
@@ -5480,20 +5489,12 @@ _.sortedIndexBy(maps, { 'x': 4 }, 'x')
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.union([2], [1, 2])
-// => Seq [2, 1]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".uniq"><span class="type-signature">(static) </span>uniq<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {Seq}</span></h4>
+    <h4 class="name" id=".uniq"><span class="type-signature">_.</span>uniq<span class="signature">(iterable)</span><span class="type-signature"> &rarr; {Seq}</span></h4>
 
     
 
@@ -5508,6 +5509,14 @@ occurrence of each element is kept.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.uniq([2, 1, 2])
+// => Seq [2, 1]</code></pre>
 
 
 
@@ -5640,20 +5649,12 @@ occurrence of each element is kept.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.uniq([2, 1, 2])
-// => Seq [2, 1]</code></pre>
-
-
-
         
             
 
     
 
-    <h4 class="name" id=".xor"><span class="type-signature">(static) </span>xor<span class="signature">(&hellip;iterables<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Seq}</span></h4>
+    <h4 class="name" id=".xor"><span class="type-signature">_.</span>xor<span class="signature">([&hellip;iterables])</span><span class="type-signature"> &rarr; {Seq}</span></h4>
 
     
 
@@ -5670,6 +5671,14 @@ they occur in the iterables.</p>
 
 
 
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>_.xor([2, 1], [2, 3])
+// => [1, 3]</code></pre>
 
 
 
@@ -5823,14 +5832,6 @@ they occur in the iterables.</p>
 
     
 
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>_.xor([2, 1], [2, 3])
-// => [1, 3]</code></pre>
-
-
-
         
     
 
@@ -5849,7 +5850,7 @@ they occur in the iterables.</p>
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Sun Jun 26 2016 16:12:02 GMT-0400 (EDT) using the Minami theme.
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Aug 09 2016 14:15:10 GMT-0400 (EDT) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>

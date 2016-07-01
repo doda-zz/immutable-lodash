@@ -11,7 +11,7 @@
     ],
     "templates": {
         "default": {
-            "layoutFile": "./minami/tmpl/layout.tmpl"
+            "layoutFile": "./docs/minami/tmpl/layout.tmpl"
         }
     },
     "opts": {
@@ -19,6 +19,6 @@
         "encoding": "utf8",
         "private": true,
         "recurse": true,
-        "template": "./minami"
+        "template": "./docs/minami"
     }
 }

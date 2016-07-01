@@ -89,8 +89,12 @@ function updateItemName(item) {
     }
 
     if (attributes && attributes.length) {
-        itemName = util.format( '%s<span class="signature-attributes">%s</span>', itemName,
-            attributes.join(', ') );
+        if (attributes.length === 1 && attributes[0] == 'opt') {
+            itemName = util.format( '[%s]', itemName );
+        } else {
+            itemName = util.format( '%s<span class="signature-attributes">%s</span>', itemName,
+                attributes.join(', ') );            
+        }
     }
 
     return itemName;
@@ -179,10 +183,7 @@ function addSignatureTypes(f) {
 }
 
 function addAttribs(f) {
-    var attribs = helper.getAttribs(f);
-    var attribsString = buildAttribsString(attribs);
-
-    f.attribs = util.format('<span class="type-signature">%s</span>', attribsString);
+    f.attribs = util.format('<span class="type-signature">_.</span>');
 }
 
 function shortenPaths(files, commonPrefix) {
