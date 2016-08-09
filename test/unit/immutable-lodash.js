@@ -27,6 +27,7 @@ const numbersObject = Immutable.Map({a: 1, b: 2, c: 3})
 const longNumbersObject = Immutable.Map({a: 1, b: 2, c: 3, d: 1})
 
 const _expect = (element) => {
+  // Convert Immutable returns into JS objects for comparison brevities' sake
   return expect(element && element.toJS ? element.toJS() : element)
 }
 
