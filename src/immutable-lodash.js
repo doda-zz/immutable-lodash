@@ -88,11 +88,8 @@ function compact(iterable) {
  * @param {Iterable} Returns the new concatenated sequence.
  * @example
  *
- * var list = [1]
- * var other = _.concat(list, 2, [3], [[4]])
- *
- * console.log(other)
- * // => [1, 2, 3, [4]]
+ * _.concat(['a'], 2, [3], [[4]])
+ * // => ['a', 2, 3, [4]]
  */
 function concat(...args) {
   let [first, ...other] = args
@@ -162,7 +159,7 @@ function difference(iterable, values) {
  * @returns {Iterable} Returns `iterable`.
  * @example
  *
- * var list = [1, 2, 3]
+ * let list = [1, 2, 3]
  *
  * _.fill(list, 'a')
  * // => ['a', 'a', 'a']
@@ -298,7 +295,7 @@ function sortedIndex(iterable, value) {
  *  into `iterable`.
  * @example
  *
- * var maps = [{ 'x': 4 }, { 'x': 5 }]
+ * let maps = [{ 'x': 4 }, { 'x': 5 }]
  *
  * _.sortedIndexBy(maps, { 'x': 4 }, (o) => o.x)
  * // => 0
@@ -445,7 +442,7 @@ function groupBy(iterable, iteratee=identity) {
  * @returns {Map} Returns the composed aggregate map.
  * @example
  *
- * var keys = [
+ * let keys = [
  *   { 'dir': 'left', 'code': 97 },
  *   { 'dir': 'right', 'code': 100 }
  * ]
@@ -591,7 +588,7 @@ function size(iterable) {
  * @returns {Iterable} Returns the picked values.
  * @example
  *
- * var iterable = { 'a': [{ 'b': { 'c': 3 } }, 4] }
+ * let iterable = { 'a': [{ 'b': { 'c': 3 } }, 4] }
  *
  * _.at(iterable, ['a[0].b.c', 'a[1]'])
  * // => [3, 4]
@@ -662,7 +659,7 @@ function defaultsDeep(map, ...sources) {
  * @returns {Iterable} Returns the new inverted iterable.
  * @example
  *
- * var iterable = { 'a': 1, 'b': 2, 'c': 1 }
+ * let iterable = { 'a': 1, 'b': 2, 'c': 1 }
  *
  * _.invert(iterable)
  * // => { '1': 'c', '2': 'b' }
@@ -691,7 +688,7 @@ function baseOmitBy(map, predicate, omit=true) {
  * @returns {Iterable} Returns the new iterable.
  * @example
  *
- * var map = { 'a': 1, 'b': '2', 'c': 3 }
+ * let map = { 'a': 1, 'b': '2', 'c': 3 }
  *
  * _.omit(map, ['a', 'c'])
  * // => { 'b': '2' }
@@ -717,7 +714,7 @@ function omit(map, props) {
  * @returns {Iterable} Returns the new iterable.
  * @example
  *
- * var iterable = { 'a': 1, 'b': '2', 'c': 3 }
+ * let iterable = { 'a': 1, 'b': '2', 'c': 3 }
  *
  * _.omitBy(iterable, _.isNumber)
  * // => { 'b': '2' }
@@ -738,7 +735,7 @@ function omitBy(map, predicate=identity) {
  * @returns {Iterable} Returns the new iterable.
  * @example
  *
- * var iterable = { 'a': 1, 'b': '2', 'c': 3 }
+ * let iterable = { 'a': 1, 'b': '2', 'c': 3 }
  *
  * _.pick(iterable, ['a', 'c'])
  * // => { 'a': 1, 'c': 3 }
@@ -763,7 +760,7 @@ function pick(map, props) {
  * @returns {Iterable} Returns the new iterable.
  * @example
  *
- * var iterable = { 'a': 1, 'b': '2', 'c': 3 }
+ * let iterable = { 'a': 1, 'b': '2', 'c': 3 }
  *
  * _.pickBy(iterable, _.isNumber)
  * // => { 'a': 1, 'c': 3 }
@@ -779,7 +776,28 @@ function isEmpty(iterable) {
 
 function noop() {}
 
-/** @namespace */
+/**
+ * The object containing all `immutable-lodash` functions.
+ * @example
+ *
+ * // Important note for examples:
+ * 
+ * // Rather than specifying every example data structure like so:
+ *
+ * let map = List([Map({ 'a': 1 }), Map({ 'b': 2 }), Map({ 'c': 3 }) ])
+ *
+ * // Immutable Lists and Maps are implied:
+ *
+ * let map = [ { 'a': 1 }, { 'b': 2 }, { 'c': 3 } ]
+ *
+ * // This is to make the it easier for you to see what every function is actually doing.
+ * 
+ * // As a rule, `immutable-lodash` functions try to return the type of object that was passed in, or,
+ * // where it makes more sense, a lazy `Seq`. The docs specify a "Returns:" type for every function,
+ * // which you can see below.
+ * 
+ * @namespace
+*/
 const _  = {}
 
 _.chunk = chunk
